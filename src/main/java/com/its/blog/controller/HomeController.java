@@ -9,13 +9,19 @@ import javax.servlet.http.HttpSession;
 public class HomeController {
     @GetMapping("/")
     public String home() {
-        return "logoutHome";
+        return "loginHome";
+    }
+
+    //블로그 페이지 출력
+    @GetMapping("/myBlog")
+    public String myBlog() {
+        return "myBlog";
     }
 
     //로그아웃 처리
     @GetMapping("/logout")
     public String logout(HttpSession session) {
         session.invalidate();
-        return "logoutHome";
+        return "loginHome";
     }
 }

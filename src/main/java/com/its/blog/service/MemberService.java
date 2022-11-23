@@ -5,6 +5,8 @@ import com.its.blog.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class MemberService {
     @Autowired
@@ -28,5 +30,15 @@ public class MemberService {
         } else {
             return false;
         }
+    }
+
+    //회원관리 처리 (관리자용)
+    public List<MemberDTO> findAll() {
+        return memberRepository.findAll();
+    }
+
+    //회원정보 페이지 출력
+    public MemberDTO findById(Long id) {
+        return memberRepository.findById(id);
     }
 }

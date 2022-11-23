@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @Controller
 @RequestMapping("/member")
@@ -47,8 +48,23 @@ public class MemberController {
         if (saveResult) {
             return "/memberPages/memberLogin";
         } else {
-            return "logoutHome";
+            return "loginHome";
         }
     }
 
+    //회원관리 페이지 출력 (관리자용)
+    @GetMapping("/members")
+    public String findAll(Model model) {
+        List<MemberDTO> memberList = memberService.findAll();
+        model.addAttribute("memberList", memberList);
+        return "memberPages/memberList";
+    }
+
+    //회원정보 페이지 출력
+    @GetMapping
+    public String findById(@RequestParam("id") Long id, Model model) {
+        MemberDTO memberDTO = memberService.findById(id);
+        model.addAttribute("member", memberDTO);
+        return "memberPages/memberDetail";
+    }
 }
