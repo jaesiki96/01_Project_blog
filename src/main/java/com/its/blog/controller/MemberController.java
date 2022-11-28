@@ -68,7 +68,7 @@ public class MemberController {
     }
 
     //회원정보 페이지 출력
-    @GetMapping
+    @GetMapping("/member")
     public String findById(@RequestParam("id") Long id, Model model) {
         MemberDTO memberDTO = memberService.findById(id);
         model.addAttribute("member", memberDTO);

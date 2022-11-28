@@ -5,6 +5,11 @@
     <title>blog_project</title>
     <link rel="stylesheet" href="/resources/css/blog.css">
     <link rel="stylesheet" href="/resources/css/blog.rtl.css">
+    <style>
+        a {
+            text-decoration: none
+        }
+    </style>
 </head>
 <body>
 <jsp:include page="layout/header.jsp" flush="false"></jsp:include>
@@ -26,175 +31,36 @@
 
     <div class="row g-5">
         <div class="col-md-8">
-            <h3 class="pb-4 mb-4 fst-italic border-bottom">
-                From the Firehose
+            <h3 class="pb-4 mb-4 fst-italic border-bottom" style="font-family: '나눔스퀘어 네오 ExtraBold'">
+                이달의 Blog
             </h3>
 
             <article class="blog-post">
-                <h2 class="blog-post-title mb-1">Sample blog post</h2>
-                <p class="blog-post-meta">January 1, 2021 by <a href="#">Mark</a></p>
+                <h2 class="blog-post-title mb-1"><a href="/board?id=15" style="font-family: '나눔스퀘어 네오 Bold'">관리자</a></h2>
 
-                <p>This blog post shows a few different types of content that’s supported and styled with Bootstrap.
-                    Basic typography, lists, tables, images, code, and more are all supported as expected.</p>
+                <p style="font-family: '나눔스퀘어 네오 Light'">오랜만에 소설을 읽었다. 알고 지낸 지 오래되었으나 손이 가지 않던 두근두근 내 인생. <br>
+                    본의 아니게 소설에 대한 사전 정보가 많아서 '식상' 할 거라는 추측 때문이었을까...</p>
                 <hr>
-                <p>This is some additional paragraph placeholder content. It has been written to fill the available
-                    space and show how a longer snippet of text affects the surrounding content. We'll repeat it often
-                    to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
-                <h2>Blockquotes</h2>
-                <p>This is an example blockquote in action:</p>
-                <blockquote class="blockquote">
-                    <p>Quoted text goes here.</p>
-                </blockquote>
-                <p>This is some additional paragraph placeholder content. It has been written to fill the available
-                    space and show how a longer snippet of text affects the surrounding content. We'll repeat it often
-                    to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
-                <h3>Example lists</h3>
-                <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other
-                    highly repetitive body text used throughout. This is an example unordered list:</p>
-                <ul>
-                    <li>First list item</li>
-                    <li>Second list item with a longer description</li>
-                    <li>Third list item to close it out</li>
-                </ul>
-                <p>And this is an ordered list:</p>
-                <ol>
-                    <li>First list item</li>
-                    <li>Second list item with a longer description</li>
-                    <li>Third list item to close it out</li>
-                </ol>
-                <p>And this is a definition list:</p>
-                <dl>
-                    <dt>HyperText Markup Language (HTML)</dt>
-                    <dd>The language used to describe and define the content of a Web page</dd>
-                    <dt>Cascading Style Sheets (CSS)</dt>
-                    <dd>Used to describe the appearance of Web content</dd>
-                    <dt>JavaScript (JS)</dt>
-                    <dd>The programming language used to build advanced Web sites and applications</dd>
-                </dl>
-                <h2>Inline HTML elements</h2>
-                <p>HTML defines a long list of available inline tags, a complete list of which can be found on the <a
-                        href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">Mozilla Developer Network</a>.
-                </p>
-                <ul>
-                    <li><strong>To bold text</strong>, use <code class="language-plaintext highlighter-rouge">&lt;strong&gt;</code>.
-                    </li>
-                    <li><em>To italicize text</em>, use <code
-                            class="language-plaintext highlighter-rouge">&lt;em&gt;</code>.
-                    </li>
-                    <li>Abbreviations, like <abbr title="HyperText Markup Language">HTML</abbr> should use <code
-                            class="language-plaintext highlighter-rouge">&lt;abbr&gt;</code>, with an optional <code
-                            class="language-plaintext highlighter-rouge">title</code> attribute for the full phrase.
-                    </li>
-                    <li>Citations, like <cite>— Mark Otto</cite>, should use <code
-                            class="language-plaintext highlighter-rouge">&lt;cite&gt;</code>.
-                    </li>
-                    <li>
-                        <del>Deleted</del>
-                        text should use <code class="language-plaintext highlighter-rouge">&lt;del&gt;</code> and
-                        <ins>inserted</ins>
-                        text should use <code class="language-plaintext highlighter-rouge">&lt;ins&gt;</code>.
-                    </li>
-                    <li>Superscript <sup>text</sup> uses <code
-                            class="language-plaintext highlighter-rouge">&lt;sup&gt;</code> and subscript
-                        <sub>text</sub> uses <code class="language-plaintext highlighter-rouge">&lt;sub&gt;</code>.
-                    </li>
-                </ul>
-                <p>Most of these elements are styled by browsers with few modifications on our part.</p>
-                <h2>Heading</h2>
-                <p>This is some additional paragraph placeholder content. It has been written to fill the available
-                    space and show how a longer snippet of text affects the surrounding content. We'll repeat it often
-                    to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
-                <h3>Sub-heading</h3>
-                <p>This is some additional paragraph placeholder content. It has been written to fill the available
-                    space and show how a longer snippet of text affects the surrounding content. We'll repeat it often
-                    to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
-                <pre><code>Example code block</code></pre>
-                <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other
-                    highly repetitive body text used throughout.</p>
+                <p style="font-family: '나눔스퀘어 네오 Light'">[김애란 다시 읽기] 두근두근 내 인생 / 바깥은 여름 / 잊기 좋은</p>
+
+                <h2 class="blog-post-title mb-1"><a href="/board?id=16" style="font-family: '나눔스퀘어 네오 Bold'">회원1</a></h2>
+
+                <p style="font-family: '나눔스퀘어 네오 Light'">동명주말농장식당 닭 한 마리 오리 한 마리 영업시간 매일 9:00~22:00...</p>
+                <hr>
+                <p style="font-family: '나눔스퀘어 네오 Light'">칠곡 야외 돌판 오리고기 (동명 주말농장 식당)</p>
             </article>
-
-            <article class="blog-post">
-                <h2 class="blog-post-title mb-1">Another blog post</h2>
-                <p class="blog-post-meta">December 23, 2020 by <a href="#">Jacob</a></p>
-
-                <p>This is some additional paragraph placeholder content. It has been written to fill the available
-                    space and show how a longer snippet of text affects the surrounding content. We'll repeat it often
-                    to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
-                <blockquote>
-                    <p>Longer quote goes here, maybe with some <strong>emphasized text</strong> in the middle of it.</p>
-                </blockquote>
-                <p>This is some additional paragraph placeholder content. It has been written to fill the available
-                    space and show how a longer snippet of text affects the surrounding content. We'll repeat it often
-                    to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
-                <h3>Example table</h3>
-                <p>And don't forget about tables in these posts:</p>
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Upvotes</th>
-                        <th>Downvotes</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>Alice</td>
-                        <td>10</td>
-                        <td>11</td>
-                    </tr>
-                    <tr>
-                        <td>Bob</td>
-                        <td>4</td>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>Charlie</td>
-                        <td>7</td>
-                        <td>9</td>
-                    </tr>
-                    </tbody>
-                    <tfoot>
-                    <tr>
-                        <td>Totals</td>
-                        <td>21</td>
-                        <td>23</td>
-                    </tr>
-                    </tfoot>
-                </table>
-
-                <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other
-                    highly repetitive body text used throughout.</p>
-            </article>
-
-            <article class="blog-post">
-                <h2 class="blog-post-title mb-1">New feature</h2>
-                <p class="blog-post-meta">December 14, 2020 by <a href="#">Chris</a></p>
-
-                <p>This is some additional paragraph placeholder content. It has been written to fill the available
-                    space and show how a longer snippet of text affects the surrounding content. We'll repeat it often
-                    to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
-                <ul>
-                    <li>First list item</li>
-                    <li>Second list item with a longer description</li>
-                    <li>Third list item to close it out</li>
-                </ul>
-                <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other
-                    highly repetitive body text used throughout.</p>
-            </article>
-
-            <nav class="blog-pagination" aria-label="Pagination">
-                <a class="btn btn-outline-primary rounded-pill" href="#">↑</a>
-<%--                <a class="btn btn-outline-secondary rounded-pill disabled">Newer</a>--%>
-            </nav>
 
         </div>
 
         <div class="col-md-4">
             <div class="position-sticky" style="top: 2rem;">
                 <div class="p-4 mb-3 bg-light rounded">
-                    <h4 class="fst-italic">About</h4>
-                    <p class="mb-0">Customize this section to tell your visitors a little bit about your publication,
-                        writers, content, or something else entirely. Totally up to you.</p>
+                    <h4 class="fst-italic" style="font-family: '나눔스퀘어 네오 Bold'">공지사항</h4>
+                    <p class="mb-0">
+                        <a href="https://section.blog.naver.com/Notice.naver?docId=8715" style="font-size: 12px">[공지] 블로그 이미지 서버 점검..</a> <br>
+                        <a href="https://section.blog.naver.com/Notice.naver?docId=8546" style="font-size: 12px">[안내] 이태원 사고 관련 게시글 작성에 주의..</a> <br>
+                        <a href="https://section.blog.naver.com/Notice.naver?docId=8455" style="font-size: 12px">[공지수정] 판교 IDC 센터 화재로 인한 블로그..</a> <br>
+                    </p>
                 </div>
 
                 <div class="p-4">
