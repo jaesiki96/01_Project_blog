@@ -18,38 +18,29 @@
     </style>
 </head>
 <body>
+<jsp:include page="../layout/header.jsp" flush="false"></jsp:include>
 <div class="container" id="update-form">
     <form action="/board/update" method="post" name="updateForm">
         <input type="hidden" name="id" value="${board.id}" class="form-control" readonly>
         <input type="text" name="boardTitle" value="${board.boardTitle}" class="form-control">
         <select name="boardTag" id="boardTag" class="form-control">
             <option value="">주제를 선택해주세요</option>
-            <option value="tag_food">음식</option>
-            <option value="tag_review">리뷰</option>
-            <option value="tag_trip">여행</option>
-            <option value="tag_news">뉴스</option>
-            <option value="tag_car">자동차</option>
-            <option value="tag_it">IT/과학</option>
+            <option value="음식">음식</option>
+            <option value="리뷰">리뷰</option>
+            <option value="여행">여행</option>
+            <option value="뉴스">뉴스</option>
+            <option value="자동차">자동차</option>
+            <option value="IT/과학">IT/과학</option>
         </select> <br>
         <textarea name="boardContents" cols="30" rows="10" class="form-control">${board.boardContents}</textarea>
         <input type="button" value="수정" onclick="updateReqFn()" class="btn btn-primary">
     </form>
 </div>
+<jsp:include page="../layout/footer.jsp" flush="false"></jsp:include>
 </body>
 <script>
     const updateReqFn = () => {
-        const title = document.getElementById("boardTitle").value;
-        const tag = document.getElementById("boardTag").value;
-        const contents = document.getElementById("boardContents").value;
-        if (title == "") {
-            alert("제목을 입력해주세요.")
-        } else if (tag == "") {
-            alert("주제를 선택해주세요.")
-        } else if (contents == "") {
-            alert("내용을 입력해주세요.")
-        } else {
-            document.updateForm.submit();
-        }
+        document.updateForm.submit();
     }
 </script>
 </html>

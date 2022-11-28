@@ -22,9 +22,6 @@ public class BoardController {
     @Autowired // findById 에서 CommentService 호출 (댓글 기능)
     private CommentService commentService;
 
-    @Autowired
-    private MemberService memberService;
-
     // 글 작성 페이지 출력
     @GetMapping("/save")
     public String saveForm() {

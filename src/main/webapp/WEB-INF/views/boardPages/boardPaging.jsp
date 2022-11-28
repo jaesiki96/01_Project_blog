@@ -13,6 +13,8 @@
     </style>
 </head>
 <body>
+<jsp:include page="../layout/header.jsp" flush="false"></jsp:include>
+<button class="mb-3 btn-primary" style="float: right" onclick="write_button()">글 작성</button>
 <div class="container" id="list">
     <table class="table table-striped table-hover text-center">
         <tr>
@@ -85,5 +87,11 @@
         </c:choose>
     </ul>
 </div>
+<jsp:include page="../layout/footer.jsp" flush="false"></jsp:include>
 </body>
+<script>
+    const write_button = () => {
+        location.href = "/board/save";
+    }
+</script>
 </html>

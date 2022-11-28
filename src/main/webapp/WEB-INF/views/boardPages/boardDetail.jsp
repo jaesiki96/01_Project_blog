@@ -18,22 +18,27 @@
     </style>
 </head>
 <body>
+<jsp:include page="../layout/header.jsp" flush="false"></jsp:include>
 <div class="container" id="detail">
     <table class="table table-hover">
         <tr>
-            <th>date</th>
+            <th>작성일</th>
             <td>${board.boardCreatedDate}</td>
         </tr>
         <tr>
-            <th>hits</th>
+            <th>조회수</th>
             <td>${board.boardHits}</td>
         </tr>
         <tr>
-            <th>title</th>
+            <th>제목</th>
             <td>${board.boardTitle}</td>
         </tr>
         <tr>
-            <th>contents</th>
+            <th>주제</th>
+            <td>${board.boardTag}</td>
+        </tr>
+        <tr>
+            <th>내용</th>
             <td>${board.boardContents}</td>
         </tr>
         <c:if test="${board.storedFileName != null}">
@@ -46,13 +51,15 @@
             </tr>
         </c:if>
     </table>
-    <c:if test="${sessionScope.loginId}">
     <button class="btn btn-primary" onclick="listFn()">목록</button>
+    <c:if test="${sessionScope.loginId != null}">
     <button class="btn btn-warning" onclick="updateFn()">수정</button>
     <button class="btn btn-danger" onclick="deleteFn()">삭제</button>
     </c:if>
 </div>
 <div class="container mt-5" id="comment-write">
+    <c:choose>
+        <c:when test="${sessionScope.loginId != null}">
     <div class="input-group-sm mb-3">
         <div class="form-floating">
             <input type="text" id="commentWriter" class="form-control" placeholder="작성자">
@@ -65,6 +72,20 @@
         <button id="comment-write-btn" class="btn btn-secondary" onclick="commentWrite()">댓글작성</button>
         <%-- commentWrite 버튼을 클릭하면 작성자, 내용, 글번호 정보를  --%>
     </div>
+        </c:when>
+        <c:otherwise>
+            <div class="input-group-sm mb-3">
+                <div class="form-floating">
+                    <input type="text" class="form-control" readonly>
+                    <label for="commentWriter">로그인 후 이용하세요</label>
+                </div>
+                <div class="form-floating">
+                    <input type="text" class="form-control" readonly>
+                    <label for="commentContents">로그인 후 이용하세요</label>
+                </div>
+            </div>
+        </c:otherwise>
+    </c:choose>
 </div>
 <div class="container mt-5" id="comment-list">
     <table class="table">
@@ -84,6 +105,7 @@
         </c:forEach>
     </table>
 </div>
+<jsp:include page="../layout/footer.jsp" flush="false"></jsp:include>
 </body>
 <script>
     const commentWrite = () => {

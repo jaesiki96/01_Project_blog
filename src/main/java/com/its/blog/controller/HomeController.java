@@ -9,7 +9,7 @@ import javax.servlet.http.HttpSession;
 public class HomeController {
     @GetMapping("/")
     public String home() {
-        return "loginHome";
+        return "index";
     }
 
     //블로그 페이지 출력
@@ -22,6 +22,6 @@ public class HomeController {
     @GetMapping("/logout")
     public String logout(HttpSession session) {
         session.invalidate();
-        return "loginHome";
+        return "index";
     }
 }

@@ -32,6 +32,12 @@ public class MemberService {
         }
     }
 
+    //이메일 중복체크 (회원가입)
+    public int idCheck(String memberId) {
+        int result = memberRepository.idCheck(memberId);
+        return result;
+    }
+
     //회원관리 처리 (관리자용)
     public List<MemberDTO> findAll() {
         return memberRepository.findAll();
@@ -40,5 +46,10 @@ public class MemberService {
     //회원정보 페이지 출력
     public MemberDTO findById(Long id) {
         return memberRepository.findById(id);
+    }
+
+    //회원삭제 (관리자용)
+    public void delete(Long id) {
+        memberRepository.delete(id);
     }
 }

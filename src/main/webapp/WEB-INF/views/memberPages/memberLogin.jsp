@@ -1,75 +1,28 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: user
-  Date: 2022-11-16
-  Time: 오전 11:21
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>로그인</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sign-in/">
+    <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/resources/css/signin.css" rel="stylesheet">
 </head>
-<style>
-    .login_inner {
-        position: relative;
-        width: 743px;
-        margin: 0 auto;
-        text-align: center;
-        box-sizing: border-box;
-    }
+<body class="text-center">
+<main class="form-signin w-100 m-auto">
+    <form action="/member/login" method="post">
+        <h1 class="h3 mb-5 fw-normal">blog_Project</h1>
 
-    .logo {
-        margin-top: 150px;
-        text-align: center;
-    }
-
-    .login_box {
-        box-sizing: border-box;
-        width: 460px;
-        margin-left: 280px;
-    }
-
-    .find_wrap {
-        text-align: center;
-        padding: 20px 0 35px;
-    }
-
-    li {
-        display: inline-block;
-    }
-
-    input {
-        display: block;
-    }
-
-    ul {
-        font-size: 12px;
-    }
-
-    .login_button {
-        width: 178px;
-    }
-</style>
-<body>
-<div class="login_Page">
-    <div class="login_inner">
-        <h1 class="logo">
-            project_blog
-        </h1>
-        <div class="login_box">
-            <form action="/member/login" method="post" name="loginForm">
-                <input type="text" name="memberId" id="memberId" placeholder="아이디">
-                <input type="password" name="memberPassword" id="memberPassword" placeholder="비밀번호">
-                <input type="submit" class="login_button" value="로그인">
-            </form>
+        <div class="form-floating">
+            <input type="text" class="form-control" id="memberId" name="memberId" placeholder="비밀번호">
+            <label for="memberId">아이디</label>
         </div>
-        <ul class="find_wrap">
-            <li>
-                <a href="/member/save">회원가입</a>
-            </li>
-        </ul>
-    </div>
-</div>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="memberPassword" name="memberPassword" placeholder="비밀번호">
+            <label for="memberPassword">비밀번호</label>
+        </div>
+
+        <input class="w-100 btn btn-lg btn-primary" value="로그인" type="submit">
+        <p class="mt-5 mb-3 text-muted">&copy; blog_project</p>
+    </form>
+</main>
 </body>
 </html>

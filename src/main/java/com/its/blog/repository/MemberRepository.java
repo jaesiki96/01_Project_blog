@@ -30,6 +30,11 @@ public class MemberRepository {
         return sql.insert("Member.save", memberDTO);
     }
 
+    //이메일 중복체크 (회원가입)
+    public int idCheck(String memberId) {
+        return sql.selectOne("Member.idCheck", memberId);
+    }
+
     //회원관리 처리 (관리자용)
     public List<MemberDTO> findAll() {
         return sql.selectList("Member.findAll");
@@ -38,5 +43,10 @@ public class MemberRepository {
     //회원정보 페이지 출력
     public MemberDTO findById(Long id) {
         return sql.selectOne("Member.findById", id);
+    }
+
+    //회원삭제 (관리자용)
+    public void delete(Long id) {
+        sql.delete("Member.delete", id);
     }
 }

@@ -29,7 +29,7 @@ public class MemberController {
         session.setAttribute("loginId", memberDTO.getMemberId());
         model.addAttribute("modelId", memberDTO.getMemberId());
         if (loginResult) {
-            return "loginHome";
+            return "index";
         } else {
             return "/memberPages/memberLogin";
         }
@@ -48,8 +48,15 @@ public class MemberController {
         if (saveResult) {
             return "/memberPages/memberLogin";
         } else {
-            return "loginHome";
+            return "index";
         }
+    }
+
+    //이메일 중복체크 (회원가입)
+    @PostMapping("/idCheck")
+    public @ResponseBody int idCheck(@RequestParam("inputId") String memberId) {
+        int result = memberService.idCheck(memberId);
+        return result;
     }
 
     //회원관리 페이지 출력 (관리자용)
@@ -66,5 +73,12 @@ public class MemberController {
         MemberDTO memberDTO = memberService.findById(id);
         model.addAttribute("member", memberDTO);
         return "memberPages/memberDetail";
+    }
+
+    //회원삭제 (관리자용)
+    @GetMapping("/delete")
+    public String delete(@RequestParam("id") Long id) {
+        memberService.delete(id);
+        return "redirect:/member/members";
     }
 }

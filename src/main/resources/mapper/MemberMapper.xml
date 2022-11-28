@@ -6,8 +6,11 @@
 <mapper namespace="Member">
     <insert id="save" parameterType="member">
         insert into member_table (memberId, memberPassword, memberName, memberPhone)
-            values (#{memberId}, #{memberPassword}, #{memberName}, #{memberPhone})
+        values (#{memberId}, #{memberPassword}, #{memberName}, #{memberPhone})
     </insert>
+    <select id="idCheck" parameterType="String" resultType="int">
+        select count(memberId) from member_table where memberId=#{memberId}
+    </select>
     <select id="login" parameterType="member" resultType="member">
         select * from member_table where memberId=#{memberId} and memberPassword=#{memberPassword}
     </select>
@@ -16,5 +19,8 @@
     </select>
     <select id="findById" parameterType="Long" resultType="member">
         select * from member_table where id=#{id}
+    </select>
+    <select id="delete" parameterType="Long">
+        delete from member_table where id=#{id}
     </select>
 </mapper>

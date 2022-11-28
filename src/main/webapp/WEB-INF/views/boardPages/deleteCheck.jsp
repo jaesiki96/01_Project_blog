@@ -18,6 +18,7 @@
     </style>
 </head>
 <body>
+<jsp:include page="../layout/header.jsp" flush="false"></jsp:include>
 <div class="container" id="delete-check">
     <input type="text" id="boardPass" class="form-control" placeholder="비밀번호">
     <button class="btn btn-secondary" onclick="passCheck()">확인</button>
